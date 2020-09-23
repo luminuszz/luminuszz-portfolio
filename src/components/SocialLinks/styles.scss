@@ -32,4 +32,17 @@
       height: 50px;
     }
   }
+
+  @media (max-width: 425px) {
+    position: fixed;
+    top: 70%;
+    bottom: 0;
+    right: 100%;
+    left: 20px;
+  }
+
+  a svg {
+    width: 35px;
+    height: 35px;
+  }
 }
