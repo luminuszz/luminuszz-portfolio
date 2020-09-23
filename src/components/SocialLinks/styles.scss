@@ -1,0 +1,27 @@
+.social-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 100px;
+  right: 30px;
+
+  a + a {
+    margin-top: 10px;
+  }
+
+  a {
+    color: var(--color-neutral);
+    transition: 0.2s;
+    &:hover {
+      color: #d3d3d3;
+    }
+  }
+
+  a svg {
+    width: 40px;
+    height: 40px;
+  }
+}

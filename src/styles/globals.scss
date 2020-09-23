@@ -1,0 +1,39 @@
+// variables
+
+$family-primary: 'Roboto';
+$family-secondary: 'Montserrat';
+$color-background: #181b2b;
+$color-neutral: #ffff;
+
+:root {
+  background: $color-background;
+  --family-primary: 'Roboto';
+  --family-secondary: 'Roboto';
+  --color-background: #181b2b;
+  --color-neutral: #ffff;
+}
+
+// imports
+@import '../../node_modules/bulma/bulma.sass';
+
+html,
+body,
+__#next {
+  height: 100vh;
+  color: $color-neutral;
+}
+
+.container {
+  max-width: 900px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.level-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 20px;
+}
