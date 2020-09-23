@@ -1,0 +1,30 @@
+footer {
+  width: 100%;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0a0c13;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    > span {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    > a {
+      color: var(--color-neutral);
+      font-family: var(--family-secondary);
+      transition: 0.3s;
+
+      &:hover {
+        color: #d3d3d3;
+      }
+    }
+  }
+}

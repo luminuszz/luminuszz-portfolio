@@ -17,9 +17,16 @@ header {
   }
 
   .logo {
+    align-items: center;
     font-size: 20px;
     letter-spacing: 8px;
     font-family: var(--font-primary);
+
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-right: 25px;
+    }
   }
 
   .menu-links {
@@ -72,9 +79,56 @@ header {
       }
     }
   }
+
+  .menu-mobile {
+    max-width: 600px;
+    width: 70%;
+    height: 100%;
+    background: var(--color-background);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 7;
+    border-radius: 4px;
+    transform: translateX(-800px);
+    transition: 0.4s;
+
+    .exit-icon {
+      padding: 20px;
+
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 0;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        padding: 0 20px;
+        font-size: 25px;
+        margin: 20px 0;
+        border-top: 1px solid;
+      }
+    }
+  }
+
+  .active {
+    transform: none;
+  }
 }
 
 .is-Sticky {
   position: fixed;
   top: 0;
+  z-index: 4;
 }

@@ -8,7 +8,7 @@ $color-neutral: #ffff;
 :root {
   background: $color-background;
   --family-primary: 'Roboto';
-  --family-secondary: 'Roboto';
+  --family-secondary: 'Montserrat';
   --color-background: #181b2b;
   --color-neutral: #ffff;
 }
@@ -24,7 +24,7 @@ __#next {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 img {
@@ -56,4 +56,42 @@ img {
   50% {
     opacity: 0;
   }
+}
+
+.section-about {
+  .container {
+    max-width: 900px;
+  }
+}
+
+.section-main {
+  .container {
+    max-width: 900px;
+  }
+}
+.set-opacity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  background: var(--color-background);
+  opacity: 0.9;
+}
+.section-stack {
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+.removeScroll {
+  overflow: hidden !important;
 }
