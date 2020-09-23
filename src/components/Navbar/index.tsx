@@ -16,10 +16,13 @@ const Navbar: React.FC = () => {
           <a href="#about">About Me</a>
           <a href="#about">Projects</a>
 
-          <button type="button">
+          <a
+            className="mailto"
+            href="mailto:davi5.ribeiro.contanto@gmail.com?subject='Olá'"
+          >
             <SiGmail />
             Send a message
-          </button>
+          </a>
         </div>
       </div>
     </header>
