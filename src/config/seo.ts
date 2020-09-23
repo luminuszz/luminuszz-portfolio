@@ -10,7 +10,7 @@ const SEO: DefaultSeoProps = {
     site: 'https://twitter.com/luminuszz1',
   },
 
-  titleTemplate: 'Luminuszz',
+  titleTemplate: 'Davi Ribeiro | luminuszz',
 };
 
 export default SEO;
