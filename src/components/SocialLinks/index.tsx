@@ -8,13 +8,25 @@ import './styles.scss';
 const SocialLinks: React.FC = () => {
   return (
     <div className="social-links">
-      <a href="https://www.linkedin.com/in/davi-ribeiro-daviribeiro/">
+      <a
+        href="https://www.linkedin.com/in/davi-ribeiro-daviribeiro/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <AiOutlineLinkedin />
       </a>
-      <a href="https://twitter.com/luminuszz1">
+      <a
+        href="https://twitter.com/luminuszz1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FiTwitter />
       </a>
-      <a href="https://github.com/luminuszz">
+      <a
+        href="https://github.com/luminuszz"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <VscGithubAlt />
       </a>
     </div>
