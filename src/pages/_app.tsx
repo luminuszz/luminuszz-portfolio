@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { DefaultSeo } from 'next-seo';
+import { NextSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import React from 'react';
 
@@ -11,7 +11,7 @@ import SEO from '../config/seo';
 const CustomApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
-      <DefaultSeo {...SEO} />
+      <NextSeo {...SEO} />
       <Navbar />
       <SocialLinks />
       <Component {...pageProps} />

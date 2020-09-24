@@ -24,7 +24,7 @@ const SEO: DefaultSeoProps = {
     ],
   },
 
-  titleTemplate: 'Luminuszz',
+  titleTemplate: 'Luminuszz | Davi Ribeiro',
 };
 
 export default SEO;
