@@ -9,6 +9,14 @@ const SEO: DefaultSeoProps = {
   twitter: {
     site: 'https://twitter.com/luminuszz1',
   },
+  openGraph: {
+    site_name: 'luminuszz',
+    description:
+      'luminuszz.dev, Welcome  This is my little space | Bem vindo, Esse é o meu pequeno espaço',
+    images: [
+      { url: '../assets/profile.jpeg', alt: 'Davi Ribeiro | luminuszz' },
+    ],
+  },
 
   titleTemplate: 'Luminuszz',
 };
