@@ -8,6 +8,7 @@ import { SiTypescript } from 'react-icons/si';
 
 import profile from '../assets/profile.jpeg';
 import Footer from '../components/Footer';
+import FormSection from '../components/FormSection';
 import handleAnimationWord from '../utils/handleAnimationWord';
 
 const Home: NextPage = () => {
@@ -139,6 +140,9 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <FormSection />
+
       <Footer />
     </>
   );
