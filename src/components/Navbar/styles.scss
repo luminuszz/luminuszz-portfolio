@@ -81,8 +81,8 @@ header {
   }
 
   .menu-mobile {
-    max-width: 600px;
-    width: 70%;
+    max-width: 90%;
+    width: 90%;
     height: 100%;
     background: var(--color-background);
     position: absolute;
@@ -90,7 +90,7 @@ header {
     left: 0;
     z-index: 7;
     border-radius: 4px;
-    transform: translateX(-800px);
+    transform: translateX(-10000px);
     transition: 0.4s;
 
     .exit-icon {
@@ -115,7 +115,7 @@ header {
 
         width: 100%;
         padding: 0 20px;
-        font-size: 25px;
+        font-size: 15px;
         margin: 20px 0;
         border-top: 1px solid;
       }

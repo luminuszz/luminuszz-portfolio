@@ -69,16 +69,7 @@ img {
     max-width: 900px;
   }
 }
-.set-opacity {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 5;
-  background: var(--color-background);
-  opacity: 0.9;
-}
+
 .section-stack {
   .column {
     display: flex;
@@ -94,4 +85,14 @@ img {
 
 .removeScroll {
   overflow: hidden !important;
+}
+.set-opacity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
+  background: var(--color-background);
+  opacity: 0.9;
 }

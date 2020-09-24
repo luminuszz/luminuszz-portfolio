@@ -27,7 +27,7 @@ const Home: NextPage = () => {
                 <div className="level-item has-text-centered-mobile ">
                   <p className="content is-family-primary is-size-3-mobile is-size-4-desktop ">
                     <span
-                      className="is-size-4-mobile is-size-4-desktop animation-bar  has-text-centered-mobile"
+                      className="is-size-6-mobile is-size-4-desktop animation-bar  has-text-centered-mobile"
                       ref={textRef}
                     >
                       Hi, I'm Davi Ribeiro (luminuszz)
@@ -45,10 +45,10 @@ const Home: NextPage = () => {
                       />
                     </a>
                   </p>
-                  <p className="my-1 is-size-4-mobile is-size-4-desktop has-text-centered-mobile">
+                  <p className="my-1 is-size-6-mobile is-size-4-desktop has-text-centered-mobile">
                     - I'm a full stack developer
                   </p>
-                  <p className="my-1 is-flex is-vcentered is-size-5-desktop  is-size-4-mobile is-size-4-desktop has-text-centered-mobile">
+                  <p className="my-1 is-flex is-vcentered is-size-5-desktop mt-0-mobile  is-size-6-mobile is-size-4-desktop has-text-centered-mobile">
                     React , React Native, Nodejs
                     <FaReact className="mx-3" />
                     <GrNode />
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
               </h3>
             </div>
             <div className="description-about">
-              <p className="is-size-5 is-size-4-tablet is-size-4-mobile is-family-secondary has-text-centered has-text-justify-tablet ">
+              <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet ">
                 Web and mobile developer passionate about javascript and full of
                 good stories and good coffee: 3
               </p>

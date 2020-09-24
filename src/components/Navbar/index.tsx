@@ -48,7 +48,11 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className={`menu-mobile ${openNav && 'active'}`}>
+        <div
+          className={
+            openNav ? 'menu-mobile  active' : 'menu-mobile  is-hidden-desktop'
+          }
+        >
           <div className="exit-icon">
             <BsArrowLeft onClick={handleControlNavarbar} />
           </div>
