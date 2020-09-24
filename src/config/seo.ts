@@ -18,6 +18,8 @@ const SEO: DefaultSeoProps = {
         url:
           'https://avatars2.githubusercontent.com/u/48535259?s=460&u=06d85ab11a1bdb43207be7c6b2a2c491a48ca0b2&v=4',
         alt: 'Davi Ribeiro | luminuszz',
+        width: 100,
+        height: 100,
       },
     ],
   },
