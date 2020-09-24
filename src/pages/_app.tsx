@@ -4,8 +4,8 @@ import { AppProps } from 'next/app';
 import React from 'react';
 
 import '../styles/globals.scss';
-import Navbar from '../components/Navbar';
-import SocialLinks from '../components/SocialLinks';
+
+import { Navbar, SocialLinks } from '../components';
 import SEO from '../config/seo';
 
 const CustomApp: NextPage<AppProps> = ({ Component, pageProps }) => {

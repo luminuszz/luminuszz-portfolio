@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './styles.scss';
-import { BsArrowLeft } from 'react-icons/bs';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { SiGmail } from 'react-icons/si';
+
+import { GiHamburgerMenu, SiGmail, BsArrowLeft } from '../../assets/icons';
 
 const Navbar: React.FC = () => {
   const headerRef = useRef<HTMLHeadingElement>(null);
@@ -37,6 +36,7 @@ const Navbar: React.FC = () => {
           <div className="menu-links  is-hidden-mobile">
             <a href="#about">About Me</a>
             <a href="#stack">Stack</a>
+            <a href="#contact">Contact</a>
 
             <a
               className="mailto"

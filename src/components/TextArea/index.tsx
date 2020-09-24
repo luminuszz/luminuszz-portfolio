@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useField } from '@unform/core';
 import React, { TextareaHTMLAttributes, useEffect, useRef } from 'react';
+import './styles.scss';
 
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
+  label: string;
 }
 
-const TextArea: React.FC<TextAreaProps> = ({ name, ...props }) => {
+const TextArea: React.FC<TextAreaProps> = ({ name, label, ...props }) => {
   const textArea = useRef<HTMLTextAreaElement>(null);
 
   const { defaultValue, registerField, fieldName } = useField(name);
@@ -20,9 +22,9 @@ const TextArea: React.FC<TextAreaProps> = ({ name, ...props }) => {
   }, [fieldName, registerField]);
 
   return (
-    <div className="field">
+    <div className="field text-area-block">
       <label className="label" htmlFor={name}>
-        {name}
+        {label}
       </label>
       <div className="control">
         <textarea

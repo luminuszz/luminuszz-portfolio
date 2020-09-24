@@ -84,6 +84,43 @@ img {
   }
 }
 
+.section-contact {
+  .container {
+    max-width: 900px;
+  }
+
+  .form-block {
+    button {
+      height: 40px;
+      padding: 0 15px;
+      border: 1px solid var(--color-neutral);
+      outline: 0;
+      font-weight: 500;
+      background: transparent;
+      border-radius: 2px;
+      color: var(--color-neutral);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover,
+      &:active {
+        background: var(--color-neutral);
+        color: var(--color-background);
+      }
+      &:disabled {
+        background: var(--color-neutral);
+        color: var(--color-background);
+        cursor: auto;
+      }
+    }
+  }
+}
+
 .removeScroll {
   overflow: hidden !important;
 }
@@ -96,4 +133,17 @@ img {
   z-index: 5;
   background: var(--color-background);
   opacity: 0.9;
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  button {
+    margin-top: 20px;
+  }
+  span {
+    letter-spacing: 2px;
+  }
 }

@@ -2,11 +2,14 @@
 import { useField } from '@unform/core';
 import React, { InputHTMLAttributes, useEffect, useRef } from 'react';
 
+import './styles.scss';
+
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
+  label: string;
 }
 
-const Input: React.FC<InputProps> = ({ name, ...props }) => {
+const Input: React.FC<InputProps> = ({ name, label, ...props }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const { defaultValue, registerField, fieldName } = useField(name);
@@ -20,9 +23,9 @@ const Input: React.FC<InputProps> = ({ name, ...props }) => {
   }, [fieldName, registerField]);
 
   return (
-    <div className="field">
+    <div className="field input-area-block">
       <label className="label" htmlFor={name}>
-        {name}
+        {label}
       </label>
       <div className="control">
         <input
