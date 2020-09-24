@@ -7,6 +7,7 @@ $color-neutral: #ffff;
 
 :root {
   background: $color-background;
+  scroll-behavior: smooth;
   --family-primary: 'Roboto';
   --family-secondary: 'Montserrat';
   --color-background: #181b2b;

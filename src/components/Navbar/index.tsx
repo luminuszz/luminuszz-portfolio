@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleNavBarSticky);
   }, [handleNavBarSticky]);
 
-  const handleControlNavarbar = useCallback(() => {
+  const handleControlNavbar = useCallback(() => {
     setOpenNav(state => !state);
     document.querySelector('body').classList.toggle('removeScroll', !openNav);
   }, [openNav]);
@@ -29,14 +29,14 @@ const Navbar: React.FC = () => {
           <div className="logo is-flex ">
             <GiHamburgerMenu
               className="is-hidden-desktop"
-              onClick={handleControlNavarbar}
+              onClick={handleControlNavbar}
             />
             <h3>DAVI RIBEIRO</h3>
           </div>
 
           <div className="menu-links  is-hidden-mobile">
             <a href="#about">About Me</a>
-            <a href="#about">Stack</a>
+            <a href="#stack">Stack</a>
 
             <a
               className="mailto"
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
           }
         >
           <div className="exit-icon">
-            <BsArrowLeft onClick={handleControlNavarbar} />
+            <BsArrowLeft onClick={handleControlNavbar} />
           </div>
 
           <div className="menu-links is-hidden-desktop">

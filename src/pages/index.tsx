@@ -48,6 +48,7 @@ const Home: NextPage = () => {
                   <p className="my-1 is-size-6-mobile is-size-4-desktop has-text-centered-mobile">
                     - I'm a full stack developer
                   </p>
+
                   <p className="my-1 is-flex is-vcentered is-size-5-desktop mt-0-mobile  is-size-6-mobile is-size-4-desktop has-text-centered-mobile">
                     React , React Native, Nodejs
                     <FaReact className="mx-3" />
@@ -67,7 +68,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="hero section-about mt-6">
+      <section className="hero section-about mt-6" id="about">
         <div className="hero-body">
           <div className="container">
             <div className="title has-text-centered">
@@ -76,16 +77,20 @@ const Home: NextPage = () => {
               </h3>
             </div>
             <div className="description-about">
-              <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet ">
-                Web and mobile developer passionate about javascript and full of
-                good stories and good coffee: 3
+              <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet  is-italic">
+                - "Make it Work, Make it Right, Make it Fast and Make it Easy."
+              </p>
+              <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet mt-2 ">
+                I believe that every construction of an application goes through
+                these 4 steps. First make it work, then make it work correctly,
+                then do it in less time and lastly make it easy to use.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="hero section-stack mt-6">
+      <section className="hero section-stack mt-6" id="stack">
         <div className="hero-body">
           <div className="container">
             <div className="title has-text-centered">
