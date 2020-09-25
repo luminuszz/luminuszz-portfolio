@@ -97,13 +97,8 @@ const Navbar: React.FC = () => {
               Send a message
             </a>
             {formattedLang.map(currentLang => (
-              <Link
-                key={currentLang}
-                href={`${
-                  currentLang !== defaultLanguage ? `/${currentLang}` : '/'
-                }`}
-              >
-                <a className="is-uppercase lang-display">{currentLang}</a>
+              <Link lang={currentLang} key={currentLang} href="/">
+                <a className="is-uppercase lang-display ">{currentLang}</a>
               </Link>
             ))}
           </div>
