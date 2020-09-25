@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useTranslation } from 'next-translate';
-import Link from 'next/link';
+import Link from 'next-translate/Link';
 import React, {
   useCallback,
   useEffect,
@@ -70,12 +70,7 @@ const Navbar: React.FC = () => {
               <FaLanguage />
             </a>
             {formattedLang.map(currentLang => (
-              <Link
-                key={currentLang}
-                href={`${
-                  currentLang !== defaultLanguage ? `/${currentLang}` : '/'
-                }`}
-              >
+              <Link lang={currentLang} key={currentLang} href="/">
                 <a className="is-uppercase lang-display ">{currentLang}</a>
               </Link>
             ))}

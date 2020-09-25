@@ -55,7 +55,9 @@ const Home: NextPage = () => {
   );
 
   useEffect(() => {
-    handleAnimationWord(textRef);
+    if (textRef.current) {
+      handleAnimationWord(textRef);
+    }
   }, [textRef]);
 
   return (
