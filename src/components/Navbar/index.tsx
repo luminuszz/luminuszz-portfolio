@@ -71,11 +71,12 @@ const Navbar: React.FC = () => {
             </a>
             {formattedLang.map(currentLang => (
               <Link
+                key={currentLang}
                 href={`${
                   currentLang !== defaultLanguage ? `/${currentLang}` : '/'
                 }`}
               >
-                <a className="is-uppercase">{currentLang}</a>
+                <a className="is-uppercase lang-display ">{currentLang}</a>
               </Link>
             ))}
           </div>
@@ -100,6 +101,16 @@ const Navbar: React.FC = () => {
               <SiGmail />
               Send a message
             </a>
+            {formattedLang.map(currentLang => (
+              <Link
+                key={currentLang}
+                href={`${
+                  currentLang !== defaultLanguage ? `/${currentLang}` : '/'
+                }`}
+              >
+                <a className="is-uppercase lang-display">{currentLang}</a>
+              </Link>
+            ))}
           </div>
         </div>
       </header>

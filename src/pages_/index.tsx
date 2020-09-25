@@ -63,9 +63,11 @@ const Home: NextPage = () => {
       <Modal ref={modalRef}>
         <div className="modal-content">
           <span className="has-text-centered is-size-5 is-size-6-mobile">
-            Email enviado com sucesso !
+            {t('common:components.modal.text')}
           </span>
-          <Button onClick={modalRef.current?.handleCloseModal}>Fechar</Button>
+          <Button onClick={modalRef.current?.handleCloseModal}>
+            {t('common:components.modal.button')}
+          </Button>
         </div>
       </Modal>
       <SocialLinks />
