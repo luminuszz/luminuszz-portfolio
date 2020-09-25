@@ -55,7 +55,7 @@ const Home: NextPage = () => {
           <span className="has-text-centered is-size-5 is-size-6-mobile">
             Email enviado com sucesso !
           </span>
-          <Button onClick={modalRef.current.handleCloseModal}>Fechar</Button>
+          <Button onClick={modalRef.current?.handleCloseModal}>Fechar</Button>
         </div>
       </Modal>
       <section className="hero section-main">
@@ -118,6 +118,9 @@ const Home: NextPage = () => {
             <div className="description-about">
               <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet  is-italic">
                 - "Make it Work, Make it Right, Make it Fast and Make it Easy."
+              </p>
+              <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet  is-italic">
+                Kent Beck ( creator of TDD)
               </p>
               <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet mt-2 ">
                 I believe that every construction of an application goes through
