@@ -3,6 +3,7 @@ import { FormHandles, SubmitHandler } from '@unform/core';
 import { Form } from '@unform/web';
 import axios from 'axios';
 import { NextPage } from 'next';
+import { useTranslation } from 'next-translate';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import {
@@ -13,7 +14,15 @@ import {
   SiTypescript,
 } from '../assets/icons';
 import profile from '../assets/profile.jpeg';
-import Modal, { Button, Footer, Input, Loading, TextArea } from '../components';
+import Modal, {
+  Button,
+  Footer,
+  Input,
+  Loading,
+  TextArea,
+  Navbar,
+  SocialLinks,
+} from '../components';
 import { InoperativeModalProps } from '../components/Modal';
 import handleAnimationWord from '../utils/handleAnimationWord';
 
@@ -29,6 +38,7 @@ const Home: NextPage = () => {
   const formRef = useRef<FormHandles>(null);
   const modalRef = useRef<InoperativeModalProps>(null);
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubmit: SubmitHandler<MailRequestProps> = useCallback(
     async (data, { reset }) => {
@@ -58,6 +68,8 @@ const Home: NextPage = () => {
           <Button onClick={modalRef.current?.handleCloseModal}>Fechar</Button>
         </div>
       </Modal>
+      <SocialLinks />
+      <Navbar />
       <section className="hero section-main">
         <div className="hero-body">
           <div className="container">
@@ -69,7 +81,7 @@ const Home: NextPage = () => {
                       className="is-size-6-mobile is-size-4-desktop animation-bar  has-text-centered-mobile"
                       ref={textRef}
                     >
-                      Hi, I'm Davi Ribeiro (luminuszz)
+                      {t('common:main.title')}
                     </span>
                     <a
                       target="_blank"
@@ -85,11 +97,11 @@ const Home: NextPage = () => {
                     </a>
                   </p>
                   <p className="my-1 is-size-6-mobile is-size-4-desktop has-text-centered-mobile">
-                    - I'm a full stack developer
+                    {t('common:main.subTitle')}
                   </p>
 
                   <p className="my-1 is-flex is-vcentered is-size-5-desktop mt-0-mobile  is-size-6-mobile is-size-4-desktop has-text-centered-mobile">
-                    React , React Native, Nodejs
+                    {t('common:main.stack')}
                     <FaReact className="mx-3" />
                     <GrNode />
                   </p>
@@ -112,20 +124,18 @@ const Home: NextPage = () => {
           <div className="container">
             <div className="title has-text-centered">
               <h3 className="has-text-white is-size-4 is-size-2-mobile is-size-3-tablet">
-                About me
+                {t('common:about.title')}
               </h3>
             </div>
             <div className="description-about">
               <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet  is-italic">
-                - "Make it Work, Make it Right, Make it Fast and Make it Easy."
+                {t('common:about.quote')}
               </p>
               <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet  is-italic">
-                Kent Beck ( creator of TDD)
+                {t('common:about.quoteAuthor')}
               </p>
               <p className="is-size-5 is-size-4-tablet is-size-6-mobile is-family-secondary has-text-centered has-text-justify-tablet mt-2 ">
-                I believe that every construction of an application goes through
-                these 4 steps. First make it work, then make it work correctly,
-                then do it in less time and lastly make it easy to use.
+                {t('common:about.textAbout')}
               </p>
             </div>
           </div>
@@ -137,44 +147,44 @@ const Home: NextPage = () => {
           <div className="container">
             <div className="title has-text-centered">
               <h3 className="has-text-white  is-size-3 is-size-2-tablet is-size-2-mobile">
-                My Stack
+                {t('common:stack.title')}
               </h3>
             </div>
             <div className="columns is-centered is-vcentered is-multiline mt-6 is-family-secondary">
               <div className="column is-2 is-4-tablet">
                 <FaReact />
                 <h3 className="is-size-4 has-text-white hat-has-text-weight-medium mt-4 ">
-                  React.js
+                  {t('common:stack.react')}
                 </h3>
               </div>
               <div className="column is-2 is-4-tablet">
                 <GrNode />
                 <h3 className="is-size-4 has-text-white hat-has-text-weight-medium mt-4 ">
-                  Node.js
+                  {t('common:stack.Nodejs')}
                 </h3>
               </div>
               <div className="column is-2 is-4-tablet">
                 <FaReact />
                 <h3 className="is-size-4 has-text-white hat-has-text-weight-medium mt-4 ">
-                  React Native
+                  {t('common:stack.ReactNative')}
                 </h3>
               </div>
               <div className="column is-2 is-4-tablet">
                 <DiMongodb />
                 <h3 className="is-size-4 has-text-white hat-has-text-weight-medium mt-4 ">
-                  MongoDB
+                  {t('common:stack.MongoDB')}
                 </h3>
               </div>
               <div className="column is-2 is-4-tablet">
                 <DiPostgresql />
                 <h3 className="is-size-4 has-text-white hat-has-text-weight-medium mt-4 ">
-                  PostgreSQL
+                  {t('common:stack.PostgreSQL')}
                 </h3>
               </div>
               <div className="column is-2 is-4-tablet">
                 <SiTypescript />
                 <h3 className="is-size-4 has-text-white hat-has-text-weight-medium mt-4 ">
-                  Typescript
+                  {t('common:stack.Typescript')}
                 </h3>
               </div>
             </div>
@@ -187,17 +197,34 @@ const Home: NextPage = () => {
           <div className="container">
             <div className="title has-text-centered">
               <h3 className="has-text-white  is-size-3 is-size-2-tablet is-size-2-mobile">
-                Contact
+                {t('common:contact.title')}
               </h3>
             </div>
             <Form className="form-block" ref={formRef} onSubmit={handleSubmit}>
-              <Input autoComplete="name" label="Name" name="name" />
-              <Input autoComplete="email" label="E-mail" name="email" />
-              <Input label="Subject" name="subject" />
-              <TextArea name="message" label="Message" />
+              <Input
+                autoComplete="name"
+                label={t('common:contact.contactForm.name')}
+                name="name"
+              />
+              <Input
+                autoComplete="email"
+                label={t('common:contact.contactForm.email')}
+                name="email"
+              />
+              <Input
+                label={t('common:contact.contactForm.subject')}
+                name="subject"
+              />
+              <TextArea
+                name="message"
+                label={t('common:contact.contactForm.message')}
+              />
 
               <button disabled={loading} type="submit">
-                <Loading visibility={Number(!!loading)} text="Send" />
+                <Loading
+                  visibility={Number(!!loading)}
+                  text={t('common:contact.contactForm.button')}
+                />
               </button>
             </Form>
           </div>

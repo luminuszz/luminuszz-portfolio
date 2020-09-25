@@ -78,6 +78,13 @@ header {
         margin-right: 5px;
       }
     }
+
+    .lang {
+      > svg {
+        width: 35px;
+        height: 35px;
+      }
+    }
   }
 
   .menu-mobile {

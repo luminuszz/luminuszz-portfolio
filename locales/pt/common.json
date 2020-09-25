@@ -1,0 +1,46 @@
+{
+  "main": {
+    "title": "Oi, Eu sou Davi Ribeiro (luminuszz)",
+    "subTitle": " - Sou um desenvolvedor full stack",
+    "stack": " React , React Native, Nodejs"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "quote": "- \" Faça funcionar, Faça corretamente, Faça ser rápido, Faça ser fácil. \" ",
+    "quoteAuthor": "Kent Beck ( creator of TDD)",
+    "textAbout": "Acredito que toda construção de uma aplicação passa por essas 4 etapas. Primeiro faça funcionar, depois faça funcionar corretamente, depois faça isso em menos tempo e, por último, torne-o fácil de usar. "
+  },
+  "stack": {
+    "title": "Minha Stack",
+    "react": "React.js",
+    "Nodejs": "Node.js",
+    "ReactNative": "React Native",
+    "MongoDB": "MongoDB",
+    "PostgreSQL": "PostgreSQL",
+    "Typescript": "Typescript"
+  },
+  "contact": {
+    "title": "Contato",
+    "contactForm": {
+      "name": "Nome",
+      "email": "E-mail",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "button": "Enviar"
+    }
+  },
+  "components": {
+    "modal": {
+      "text": "E-mail enviado com sucesso !",
+      "button": "Fechar"
+    },
+    "navbar": {
+      "links": {
+        "about": "Sobre mim",
+        "stack": "Stack",
+        "contact": "Contato"
+      },
+      "navButton": "Envie uma mensagem"
+    }
+  }
+}

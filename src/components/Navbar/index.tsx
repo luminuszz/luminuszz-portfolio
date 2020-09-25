@@ -1,12 +1,28 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import './styles.scss';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { useTranslation } from 'next-translate';
+import Link from 'next/link';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
-import { GiHamburgerMenu, SiGmail, BsArrowLeft } from '../../assets/icons';
+import './styles.scss';
+import { allLanguages, defaultLanguage } from '../../../i18n.json';
+import {
+  GiHamburgerMenu,
+  SiGmail,
+  BsArrowLeft,
+  FaLanguage,
+} from '../../assets/icons';
 
 const Navbar: React.FC = () => {
   const headerRef = useRef<HTMLHeadingElement>(null);
   const [isSticky, setIsSticky] = useState(false);
   const [openNav, setOpenNav] = useState(false);
+  const { t, lang } = useTranslation();
 
   const handleNavBarSticky = useCallback(() => {
     setIsSticky(window.pageYOffset > headerRef.current?.offsetTop);
@@ -21,6 +37,10 @@ const Navbar: React.FC = () => {
     document.querySelector('body').classList.toggle('removeScroll', !openNav);
   }, [openNav]);
 
+  const formattedLang = useMemo(() => {
+    return allLanguages.filter(currentLang => currentLang !== lang);
+  }, [lang]);
+
   return (
     <>
       <header ref={headerRef} className={`${isSticky && 'is-Sticky'}`}>
@@ -34,17 +54,30 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="menu-links  is-hidden-mobile">
-            <a href="#about">About Me</a>
-            <a href="#stack">Stack</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">{t('common:components.navbar.links.about')}</a>
+            <a href="#stack">{t('common:components.navbar.links.stack')}</a>
+            <a href="#contact">{t('common:components.navbar.links.contact')}</a>
 
             <a
               className="mailto"
               href="mailto:davi5.ribeiro.contanto@gmail.com?subject='Olá'"
             >
               <SiGmail />
-              Send a message
+              {t('common:components.navbar.navButton')}
             </a>
+
+            <a href="#a" className="lang">
+              <FaLanguage />
+            </a>
+            {formattedLang.map(currentLang => (
+              <Link
+                href={`${
+                  currentLang !== defaultLanguage ? `/${currentLang}` : '/'
+                }`}
+              >
+                <a className="is-uppercase">{currentLang}</a>
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -59,8 +92,7 @@ const Navbar: React.FC = () => {
 
           <div className="menu-links is-hidden-desktop">
             <a href="#about">About Me</a>
-            <a href="#about">Stack</a>
-
+            <a href="#about">{t('common:navbar.links.stack')}</a>
             <a
               className="mailto"
               href="mailto:davi5.ribeiro.contanto@gmail.com?subject='Olá'"
