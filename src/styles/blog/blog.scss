@@ -27,4 +27,8 @@
       }
     }
   }
+
+  .link-content + .link-content {
+    margin-top: 20px;
+  }
 }

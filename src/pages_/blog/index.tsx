@@ -29,8 +29,8 @@ const Blog: NextPage<Props> = ({ blogs }) => {
             </div>
 
             {blogs.map(blog => (
-              <Link href={`/blog/${blog.slug}`}>
-                <div className="link-content" key={blog.id}>
+              <Link href={`/blog/${blog.slug}`} key={blog.id}>
+                <div className="link-content">
                   <a className="is-size-3" href="">
                     {blog.title}
                   </a>
