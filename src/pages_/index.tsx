@@ -74,7 +74,7 @@ const Home: NextPage = () => {
       </Modal>
       <SocialLinks />
       <Navbar />
-      <section className="hero section-main">
+      <section className="hero section-main" id="main">
         <div className="hero-body">
           <div className="container">
             <div className="level">
@@ -209,27 +209,27 @@ const Home: NextPage = () => {
                 autoComplete="name"
                 label={t('common:contact.contactForm.name')}
                 name="name"
+                required
               />
               <Input
                 autoComplete="email"
                 label={t('common:contact.contactForm.email')}
                 name="email"
+                required
               />
               <Input
                 label={t('common:contact.contactForm.subject')}
                 name="subject"
+                required
               />
               <TextArea
                 name="message"
                 label={t('common:contact.contactForm.message')}
+                required
               />
-
-              <button disabled={loading} type="submit">
-                <Loading
-                  visibility={Number(!!loading)}
-                  text={t('common:contact.contactForm.button')}
-                />
-              </button>
+              <Button type="submit" hasLoading={loading}>
+                {t('common:contact.contactForm.button')}
+              </Button>
             </Form>
           </div>
         </div>

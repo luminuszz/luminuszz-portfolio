@@ -6,8 +6,8 @@
   z-index: 4;
 
   position: fixed;
-  top: 100px;
-  right: 30px;
+  bottom: 100px;
+  left: 30px;
 
   a + a {
     margin-top: 10px;
@@ -39,10 +39,5 @@
     bottom: 0;
     right: 100%;
     left: 20px;
-  }
-
-  a svg {
-    width: 35px;
-    height: 35px;
   }
 }

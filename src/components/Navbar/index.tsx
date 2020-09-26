@@ -51,7 +51,9 @@ const Navbar: React.FC = () => {
               className="is-hidden-desktop"
               onClick={handleControlNavbar}
             />
-            <h3>DAVI RIBEIRO</h3>
+            <a href="#main" className="logo-name">
+              <h3>DAVI RIBEIRO</h3>
+            </a>
           </div>
 
           <div className="menu-links  is-hidden-mobile">
