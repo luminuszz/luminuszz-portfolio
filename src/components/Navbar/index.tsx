@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useTranslation } from 'next-translate';
 import Link from 'next-translate/Link';
+import NextLink from 'next/link';
 import React, {
   useCallback,
   useEffect,
@@ -57,6 +58,9 @@ const Navbar: React.FC = () => {
             <a href="#about">{t('common:components.navbar.links.about')}</a>
             <a href="#stack">{t('common:components.navbar.links.stack')}</a>
             <a href="#contact">{t('common:components.navbar.links.contact')}</a>
+            <NextLink href="/blog">
+              <a>{t('common:components.navbar.links.blog')}</a>
+            </NextLink>
 
             <a
               className="mailto"

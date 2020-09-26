@@ -38,7 +38,8 @@
       "links": {
         "about": "Sobre mim",
         "stack": "Stack",
-        "contact": "Contato"
+        "contact": "Contato",
+        "blog": "blog"
       },
       "navButton": "Envie uma mensagem"
     }
