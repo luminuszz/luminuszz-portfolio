@@ -7,6 +7,8 @@ import html from 'remark-html';
 import markdown from 'remark-parse';
 import unified from 'unified';
 
+import '../../styles/blog/blog.scss';
+
 type Post = {
   slug: string;
   title: string;
@@ -20,7 +22,22 @@ interface Props {
 
 const Post: NextPage<Props> = ({ post }) => {
   // eslint-disable-next-line react/no-danger
-  return <section dangerouslySetInnerHTML={{ __html: post.content }} />;
+  return (
+    <main className="hero section-post">
+      <div className="hero-body">
+        <div className="container">
+          <div className="post-content">
+            <h2 className="title has-text-centered is-size-3  is-family-primary">
+              {post.title}
+            </h2>
+            <div className="content has-text-justified">
+              <section dangerouslySetInnerHTML={{ __html: post.content }} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
 };
 export const getStaticPaths: GetStaticPaths = async () => {
   const path = `${process.cwd()}/posts`;

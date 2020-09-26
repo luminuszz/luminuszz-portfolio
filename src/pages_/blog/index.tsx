@@ -6,6 +6,8 @@ import Link from 'next/link';
 import React from 'react';
 import { uuid } from 'uuidv4';
 
+import '../../styles/blog/blog.scss';
+
 type Blog = {
   id: string;
   slug: string;
@@ -18,15 +20,27 @@ interface Props {
 }
 const Blog: NextPage<Props> = ({ blogs }) => {
   return (
-    <div>
-      {blogs.map(blog => (
-        <Link href={`/blog/${blog.slug}`}>
-          <a key={blog.id}>
-            <li>{blog.title}</li>
-          </a>
-        </Link>
-      ))}
-    </div>
+    <main className="hero">
+      <div className="hero-body">
+        <div className="container">
+          <div className="post-list">
+            <div className="title">
+              <h2 className="is-size-2 has-text-white	">Posts</h2>
+            </div>
+
+            {blogs.map(blog => (
+              <Link href={`/blog/${blog.slug}`}>
+                <div className="link-content" key={blog.id}>
+                  <a className="is-size-3" href="">
+                    {blog.title}
+                  </a>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 
@@ -49,3 +63,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 export default Blog;
+
+/*
+
+*/

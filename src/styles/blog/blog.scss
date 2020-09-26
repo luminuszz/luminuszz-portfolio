@@ -1,0 +1,30 @@
+.section-post {
+  .container {
+    max-width: 900px;
+
+    .title {
+      color: var(--color-neutral);
+    }
+  }
+}
+
+.post-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .link-content {
+    border: 1px solid var(--color-neutral);
+    padding: 10px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: var(--color-neutral);
+      transition: 0.3s;
+      a {
+        color: black;
+      }
+    }
+  }
+}
