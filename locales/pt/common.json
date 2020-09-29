@@ -32,6 +32,7 @@
   "components": {
     "modal": {
       "text": "E-mail enviado com sucesso !",
+      "error": "Opa, tivemos um erro interno, tente novamente mais tarde.",
       "button": "Fechar"
     },
     "navbar": {

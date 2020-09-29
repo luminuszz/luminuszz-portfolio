@@ -31,7 +31,8 @@
     "remark-parse": "^8.0.3",
     "unified": "^9.2.0",
     "uuidv4": "^6.2.3",
-    "vercel": "^20.1.1"
+    "vercel": "^20.1.1",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
@@ -41,6 +42,7 @@
     "@types/nodemailer": "^6.4.0",
     "@types/react": "^16.9.49",
     "@types/react-modal": "^3.10.6",
+    "@types/yup": "^0.29.7",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "commit": "git-cz",

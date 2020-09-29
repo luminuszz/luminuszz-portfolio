@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import { FormHandles, SubmitHandler } from '@unform/core';
+import { FormHandles, FormHelpers } from '@unform/core';
 import { Form } from '@unform/web';
 import axios from 'axios';
 import { NextPage } from 'next';
 import { useTranslation } from 'next-translate';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import * as Yup from 'yup';
 
 import {
   DiMongodb,
@@ -18,12 +19,12 @@ import Modal, {
   Button,
   Footer,
   Input,
-  Loading,
   TextArea,
   Navbar,
   SocialLinks,
 } from '../components';
 import { InoperativeModalProps } from '../components/Modal';
+import useValidate, { onSuccessType } from '../hooks/useValidation';
 import handleAnimationWord from '../utils/handleAnimationWord';
 
 export interface MailRequestProps {
@@ -37,22 +38,7 @@ const Home: NextPage = () => {
   const textRef = useRef<HTMLParagraphElement>(null);
   const formRef = useRef<FormHandles>(null);
   const modalRef = useRef<InoperativeModalProps>(null);
-  const [loading, setLoading] = useState(false);
   const { t } = useTranslation();
-
-  const handleSubmit: SubmitHandler<MailRequestProps> = useCallback(
-    async (data, { reset }) => {
-      try {
-        setLoading(true);
-        await axios.post('../api/sendEmailService', data);
-        reset();
-        modalRef.current?.handleOpenModal();
-      } finally {
-        setLoading(false);
-      }
-    },
-    [],
-  );
 
   useEffect(() => {
     if (textRef.current) {
@@ -60,18 +46,32 @@ const Home: NextPage = () => {
     }
   }, [textRef]);
 
+  const MailRequestSchema = Yup.object().shape({
+    name: Yup.string().required('Name required'),
+    email: Yup.string().required('E-mail required').email('Invalid Email'),
+    message: Yup.string().required('Message required'),
+    subject: Yup.string(),
+  });
+
+  const onSuccess: onSuccessType<MailRequestProps> = (data, { reset }) => {
+    try {
+      axios.post('/api/sendEmailService', data);
+      reset();
+      modalRef.current?.handleOpenModal(t('common:components.modal.text'));
+    } catch (error) {
+      modalRef.current?.handleOpenModal(t('common:components.modal.error'));
+    }
+  };
+
+  const { handleSubmit, loading } = useValidate<MailRequestProps>({
+    formRef,
+    onSuccess,
+    schema: MailRequestSchema,
+  });
+
   return (
     <>
-      <Modal ref={modalRef}>
-        <div className="modal-content">
-          <span className="has-text-centered is-size-5 is-size-6-mobile">
-            {t('common:components.modal.text')}
-          </span>
-          <Button onClick={modalRef.current?.handleCloseModal}>
-            {t('common:components.modal.button')}
-          </Button>
-        </div>
-      </Modal>
+      <Modal ref={modalRef} />
       <SocialLinks />
       <Navbar />
       <section className="hero section-main" id="main">

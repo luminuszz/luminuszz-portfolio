@@ -32,6 +32,7 @@
   "components": {
     "modal": {
       "text": "Email successfully sent !",
+      "error": "Ops, intern Error.",
       "button": "Close"
     },
     "navbar": {

@@ -6,9 +6,12 @@ import React, {
   useState,
 } from 'react';
 import ReactModal, { Styles } from 'react-modal';
+import { useTranslation } from 'next-translate';
+
+import { Button } from '..';
 
 export interface InoperativeModalProps {
-  handleOpenModal: () => void;
+  handleOpenModal: (currentMessage: string) => void;
   handleCloseModal: () => void;
 }
 type ModalProps = ComponentPropsWithRef<'div'>;
@@ -18,9 +21,15 @@ const Modal: React.ForwardRefRenderFunction<
   ModalProps
 > = ({ children }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState('');
 
-  const handleOpenModal = useCallback(() => {
+  const { t } = useTranslation();
+
+  const handleOpenModal = useCallback(currentMessage => {
     setIsOpen(true);
+    if (currentMessage) {
+      setMessage(currentMessage);
+    }
   }, []);
 
   const handleCloseModal = useCallback(() => {
@@ -64,7 +73,11 @@ const Modal: React.ForwardRefRenderFunction<
 
   return (
     <ReactModal style={styles} contentLabel="Exemplo" isOpen={isOpen}>
-      {children}
+      <span>{message}</span>
+
+      <Button onClick={handleCloseModal}>
+        {t('common:components.modal.button')}
+      </Button>
     </ReactModal>
   );
 };
