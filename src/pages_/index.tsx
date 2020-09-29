@@ -27,6 +27,8 @@ import { InoperativeModalProps } from '../components/Modal';
 import useValidate, { onSuccessType } from '../hooks/useValidation';
 import handleAnimationWord from '../utils/handleAnimationWord';
 
+import '../styles/home.scss';
+
 export interface MailRequestProps {
   name: string;
   email: string;

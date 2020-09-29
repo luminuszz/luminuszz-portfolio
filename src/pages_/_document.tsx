@@ -8,6 +8,8 @@ import Document, {
 } from 'next/document';
 import React from 'react';
 
+import '../styles/globals.scss';
+
 class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext,

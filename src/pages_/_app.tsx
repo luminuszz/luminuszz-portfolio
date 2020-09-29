@@ -5,8 +5,6 @@ import useTranslation from 'next-translate/useTranslation';
 import { AppProps } from 'next/app';
 import React from 'react';
 
-import '../styles/globals.scss';
-
 import SEO from '../config/seo';
 
 const CustomApp: NextPage<AppProps> = ({ Component, pageProps }) => {

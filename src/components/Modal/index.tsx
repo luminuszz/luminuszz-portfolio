@@ -1,5 +1,4 @@
 import React, {
-  ComponentPropsWithRef,
   forwardRef,
   useCallback,
   useImperativeHandle,
@@ -14,12 +13,11 @@ export interface InoperativeModalProps {
   handleOpenModal: (currentMessage: string) => void;
   handleCloseModal: () => void;
 }
-type ModalProps = ComponentPropsWithRef<'div'>;
 
-const Modal: React.ForwardRefRenderFunction<
-  InoperativeModalProps,
-  ModalProps
-> = ({ children }, ref) => {
+const Modal: React.ForwardRefRenderFunction<InoperativeModalProps> = (
+  props,
+  ref,
+) => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -73,11 +71,12 @@ const Modal: React.ForwardRefRenderFunction<
 
   return (
     <ReactModal style={styles} contentLabel="Exemplo" isOpen={isOpen}>
-      <span>{message}</span>
-
-      <Button onClick={handleCloseModal}>
-        {t('common:components.modal.button')}
-      </Button>
+      <div className="modal-content">
+        <span>{message}</span>
+        <Button onClick={handleCloseModal}>
+          {t('common:components.modal.button')}
+        </Button>
+      </div>
     </ReactModal>
   );
 };

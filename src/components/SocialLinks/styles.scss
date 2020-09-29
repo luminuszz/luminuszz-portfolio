@@ -34,6 +34,11 @@
   }
 
   @media (max-width: 425px) {
+    a svg {
+      width: 35px;
+      height: 35px;
+    }
+
     position: fixed;
     top: 70%;
     bottom: 0;
