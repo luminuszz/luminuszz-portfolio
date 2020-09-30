@@ -6,7 +6,6 @@ export default function handleAnimationWord(
   element.current.innerHTML = '';
 
   if (element.current) {
-    console.log('sd');
     words.forEach((word, i) => {
       setTimeout(() => {
         element.current.innerHTML += word;

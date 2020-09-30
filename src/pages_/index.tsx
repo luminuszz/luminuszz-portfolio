@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import { FormHandles, FormHelpers } from '@unform/core';
+import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import axios from 'axios';
+import { motion, Variant } from 'framer-motion';
 import { NextPage } from 'next';
 import { useTranslation } from 'next-translate';
 import React, { useEffect, useRef } from 'react';
@@ -28,6 +29,7 @@ import useValidate, { onSuccessType } from '../hooks/useValidation';
 import handleAnimationWord from '../utils/handleAnimationWord';
 
 import '../styles/home.scss';
+import useWindowPosition from '../hooks/useWindowPosition';
 
 export interface MailRequestProps {
   name: string;
@@ -70,6 +72,11 @@ const Home: NextPage = () => {
     onSuccess,
     schema: MailRequestSchema,
   });
+
+  const imgVariant = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   return (
     <>
@@ -116,9 +123,15 @@ const Home: NextPage = () => {
               </div>
 
               <div className="level-right">
-                <figure className="image">
+                <motion.figure
+                  className="image"
+                  initial="hidden"
+                  animate="visible"
+                  variants={imgVariant}
+                  transition={{ delay: 0.5 }}
+                >
                   <img className="is-rounded" src={profile} alt="Profile" />
-                </figure>
+                </motion.figure>
               </div>
             </div>
           </div>

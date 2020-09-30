@@ -6,6 +6,7 @@ import { AppProps } from 'next/app';
 import React from 'react';
 
 import SEO from '../config/seo';
+import '../styles/globals.scss';
 
 const CustomApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   const { lang } = useTranslation();
