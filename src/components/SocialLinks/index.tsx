@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useViewportScroll } from 'framer-motion';
 import React, { useState } from 'react';
 import { AiOutlineLinkedin } from 'react-icons/ai';
 import { FiTwitter } from 'react-icons/fi';

@@ -1,21 +1,18 @@
 import { MutableRefObject, useCallback, useEffect } from 'react';
 
-interface Params<T> {
+interface Params {
   elementRef: MutableRefObject<HTMLDivElement>;
-  onReady: (element: this['elementRef']) => void;
-  model: HTMLElement;
 }
 
-export default function useWindowPosition<T>({
-  onReady,
-  elementRef,
-  model,
-}: Params<T>): void {
-  const ready = useCallback(onReady, []);
+interface HookReturn {
+  offsetEnd: number;
+}
 
-  useEffect(() => {
-    if (elementRef.current?.offsetTop > model?.offsetTop) {
-      ready(elementRef);
-    }
-  }, [elementRef, model, ready]);
+export default function useWindowPosition({ elementRef }: Params): HookReturn {
+  const rect = elementRef.current?.getBoundingClientRect();
+  const scrollTop = window?.pageYOffset || document.documentElement?.scrollTop;
+
+  const offsetEnd = rect.top + scrollTop;
+
+  return { offsetEnd };
 }
