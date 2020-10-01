@@ -19,8 +19,9 @@ class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt-br">
+      <Html lang="pt">
         <Head>
+          <meta charSet="utf-8" />
           <meta
             property="og:image"
             content="https://avatars2.githubusercontent.com/u/48535259?s=460&u=06d85ab11a1bdb43207be7c6b2a2c491a48ca0b2&v=4"

@@ -11,7 +11,7 @@ import React, {
 } from 'react';
 
 import './styles.scss';
-import { allLanguages, defaultLanguage } from '../../../i18n.json';
+import { allLanguages } from '../../../i18n.json';
 import {
   GiHamburgerMenu,
   SiGmail,

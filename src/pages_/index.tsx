@@ -29,7 +29,6 @@ import useValidate, { onSuccessType } from '../hooks/useValidation';
 import handleAnimationWord from '../utils/handleAnimationWord';
 
 import '../styles/home.scss';
-import useWindowPosition from '../hooks/useWindowPosition';
 
 export interface MailRequestProps {
   name: string;
@@ -45,9 +44,16 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (textRef.current) {
-      handleAnimationWord(textRef);
-    }
+    const execute = async (): Promise<void> => {
+      const animationWord = (await import('../utils/handleAnimationWord'))
+        .default;
+
+      if (textRef.current) {
+        animationWord(textRef);
+      }
+    };
+
+    execute();
   }, [textRef]);
 
   const MailRequestSchema = Yup.object().shape({
