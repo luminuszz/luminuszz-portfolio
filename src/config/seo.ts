@@ -1,7 +1,7 @@
 import { DefaultSeoProps } from 'next-seo';
 
 const SEO: DefaultSeoProps = {
-  title: 'Davi Ribeiro | luminuszz',
+  title: 'Davi Ribeiro | Luminuszz',
 
   description:
     'luminuszz.dev, Welcome  This is my little space | Bem vindo, Esse é o meu pequeno espaço',

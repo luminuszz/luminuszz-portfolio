@@ -2,6 +2,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import { NextPage, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import { uuid } from 'uuidv4';
@@ -20,27 +21,32 @@ interface Props {
 }
 const Blog: NextPage<Props> = ({ blogs }) => {
   return (
-    <main className="hero">
-      <div className="hero-body">
-        <div className="container">
-          <div className="post-list">
-            <div className="title">
-              <h2 className="is-size-2 has-text-white	">Posts</h2>
-            </div>
+    <>
+      <Head>
+        <title>Davi Ribeiro | Blog</title>
+      </Head>
+      <main className="hero">
+        <div className="hero-body">
+          <div className="container">
+            <div className="post-list">
+              <div className="title">
+                <h2 className="is-size-2 has-text-white	">Posts</h2>
+              </div>
 
-            {blogs.map(blog => (
-              <Link href={`/blog/${blog.slug}`} key={blog.id}>
-                <div className="link-content">
-                  <a className="is-size-3" href="">
-                    {blog.title}
-                  </a>
-                </div>
-              </Link>
-            ))}
+              {blogs.map(blog => (
+                <Link href={`/blog/${blog.slug}`} key={blog.id}>
+                  <div className="link-content">
+                    <a className="is-size-3" href="">
+                      {blog.title}
+                    </a>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };
 

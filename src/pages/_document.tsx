@@ -19,7 +19,7 @@ class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="pt">
+      <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <meta

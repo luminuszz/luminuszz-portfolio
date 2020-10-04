@@ -1,8 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import axios from 'axios';
-import { motion, Variant } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { NextPage } from 'next';
 import { useTranslation } from 'next-translate';
 import React, { useEffect, useRef } from 'react';
@@ -26,7 +25,6 @@ import Modal, {
 } from '../components';
 import { InoperativeModalProps } from '../components/Modal';
 import useValidate, { onSuccessType } from '../hooks/useValidation';
-import handleAnimationWord from '../utils/handleAnimationWord';
 
 import '../styles/home.scss';
 

@@ -7,6 +7,14 @@ const SEO: React.FC = () => {
       <title>Davi Ribeiro | Home</title>
       <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
+      <meta name="description" content="Welcome to me little space" />
+      <meta name="author" content="Davi Ribeiro | luminuszz" />
+      <meta name="creator" content="Davi Ribeiro | luminuszz" />
+      <meta name="revisit-after" content="1 day" />
+      <meta
+        name="keywords"
+        content="luminuszz,dev,nodejs,react,react native, bulma, development, desenvolvedor, full, stack "
+      />
       <meta name="MobileOptimized" content="320" />
       <meta name="HandheldFriendly" content="True" />
       <meta name="theme-color" content="#121214" />
@@ -17,7 +25,7 @@ const SEO: React.FC = () => {
       <meta property="og:title" content="Luminuszz" />
       <meta
         property="og:description"
-        content=" 'luminuszz.dev, Welcome  This is my little space | Bem vindo, Esse é o meu pequeno espaço',"
+        content="luminuszz.dev, Welcome  This is my little space | Bem vindo, Esse é o meu pequeno espaço,"
       />
       <meta property="og:locale" content="pt_BR" />
       <meta property="og:type" content="website" />
