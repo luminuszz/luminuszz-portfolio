@@ -31,10 +31,7 @@ const SEO: React.FC = () => {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="luminuszz" />
       <meta property="og:image" content="" />
-      <meta
-        property="og:image:secure_url"
-        content="https://avatars2.githubusercontent.com/u/48535259?s=460&u=06d85ab11a1bdb43207be7c6b2a2c491a48ca0b2&v=4"
-      />
+      <meta property="og:image:secure_url" content="/profile.jpeg" />
       <meta property="og:image:alt" content="Thumbnail" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
@@ -44,14 +41,8 @@ const SEO: React.FC = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@luminuszz" />
       <meta name="twitter:creator" content="@luminuszz" />
-      <meta
-        name="twitter:image"
-        content="https://avatars2.githubusercontent.com/u/48535259?s=460&u=06d85ab11a1bdb43207be7c6b2a2c491a48ca0b2&v=4"
-      />
-      <meta
-        name="twitter:image:src"
-        content="https://avatars2.githubusercontent.com/u/48535259?s=460&u=06d85ab11a1bdb43207be7c6b2a2c491a48ca0b2&v=4"
-      />
+      <meta name="twitter:image" content="/profile.jpeg" />
+      <meta name="twitter:image:src" content="/profile.jpeg" />
       <meta name="twitter:image:alt" content="Thumbnail" />
       <meta name="twitter:image:width" content="1200" />
       <meta name="twitter:image:height" content="620" />
