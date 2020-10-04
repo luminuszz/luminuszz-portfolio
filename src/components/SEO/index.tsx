@@ -4,6 +4,8 @@ import React from 'react';
 const SEO: React.FC = () => {
   return (
     <Head>
+      <title>Davi Ribeiro | Home</title>
+      <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="320" />
       <meta name="HandheldFriendly" content="True" />
