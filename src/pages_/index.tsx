@@ -134,7 +134,11 @@ const Home: NextPage = () => {
                   variants={imgVariant}
                   transition={{ delay: 0.5 }}
                 >
-                  <img className="is-rounded" src={profile} alt="Profile" />
+                  <img
+                    className="is-rounded"
+                    src={profile}
+                    alt="Davi Ribeiro"
+                  />
                 </motion.figure>
               </div>
             </div>

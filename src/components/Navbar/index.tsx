@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
               {t('common:components.navbar.navButton')}
             </a>
 
-            <a href="#a" className="lang">
+            <a href="#lang" className="lang">
               <FaLanguage />
             </a>
             {formattedLang.map(currentLang => (
