@@ -6,12 +6,12 @@ import { MailRequestProps } from '../index';
 
 function connectToEmailProvider(): Transporter {
   const transporter = nodeMailer.createTransport({
-    host: mailConfig.host,
-    port: mailConfig.port,
+    host: process.env.HOST,
+    port: Number(process.env.PORT),
     secure: false,
     auth: {
-      user: mailConfig.auth.user,
-      pass: mailConfig.auth.pass,
+      user: process.env.AUTH_USER,
+      pass: process.env.AUTH_PASS,
     },
     tls: {
       rejectUnauthorized: false,

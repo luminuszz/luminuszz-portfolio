@@ -1,17 +1,16 @@
 import { NowRequest, NowResponse } from '@vercel/node';
 import nodeMailer, { Transporter } from 'nodemailer';
 
-import mailConfig from '../../config/emailConfig';
 import { MailRequestProps } from '../index';
 
 function connectToEmailProvider(): Transporter {
   const transporter = nodeMailer.createTransport({
-    host: mailConfig.host,
-    port: mailConfig.port,
+    host: process.env.HOST,
+    port: Number(process.env.PORT),
     secure: false,
     auth: {
-      user: mailConfig.auth.user,
-      pass: mailConfig.auth.pass,
+      user: process.env.AUTH_USER,
+      pass: process.env.AUTH_PASS,
     },
     tls: {
       rejectUnauthorized: false,
@@ -28,7 +27,7 @@ async function sendEmail(emailData: MailRequestProps): Promise<unknown> {
     text: `${emailData.message} -> ${emailData.email}`,
     subject: emailData.subject,
     from: emailData.email,
-    to: [mailConfig.auth.user],
+    to: [process.env.AUTH_USER],
   });
 
   return mailResponse;
