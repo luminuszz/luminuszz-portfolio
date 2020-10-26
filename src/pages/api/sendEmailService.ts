@@ -1,7 +1,6 @@
 import { NowRequest, NowResponse } from '@vercel/node';
 import nodeMailer, { Transporter } from 'nodemailer';
 
-import mailConfig from '../../config/emailConfig';
 import { MailRequestProps } from '../index';
 
 function connectToEmailProvider(): Transporter {
@@ -28,7 +27,7 @@ async function sendEmail(emailData: MailRequestProps): Promise<unknown> {
     text: `${emailData.message} -> ${emailData.email}`,
     subject: emailData.subject,
     from: emailData.email,
-    to: [mailConfig.auth.user],
+    to: [process.env.AUTH_USER],
   });
 
   return mailResponse;
