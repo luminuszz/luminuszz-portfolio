@@ -4,6 +4,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import { NextPage } from 'next';
 import { useTranslation } from 'next-translate';
+import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 import * as Yup from 'yup';
 
@@ -108,6 +109,7 @@ const Home: NextPage = () => {
                       <img
                         src="https://camo.githubusercontent.com/35d3d11359a49bf12aebb834cc13fd81b95eff4e/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6876524a434c467a6361737252346961377a2f67697068792e676966"
                         width="30px"
+                        height="30px"
                         data-canonical-src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif"
                         alt="gif"
                       />
@@ -127,7 +129,7 @@ const Home: NextPage = () => {
               </div>
 
               <div className="level-right">
-                <motion.figure
+                <motion.div
                   className="image"
                   initial="hidden"
                   animate="visible"
@@ -139,7 +141,7 @@ const Home: NextPage = () => {
                     src={profile}
                     alt="Davi Ribeiro"
                   />
-                </motion.figure>
+                </motion.div>
               </div>
             </div>
           </div>
