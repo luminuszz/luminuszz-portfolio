@@ -136,7 +136,10 @@ const Home: NextPage = () => {
                   variants={imgVariant}
                   transition={{ delay: 0.5 }}
                 >
-                  <img
+                  <Image
+                    layout="fixed"
+                    width="400"
+                    height="400"
                     className="is-rounded"
                     src={profile}
                     alt="Davi Ribeiro"
@@ -259,7 +262,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-
+      <script src="//code.tidio.co/bo0jqca3poierl37q80ezc3n69zvn4mu.js" async />
       <Footer />
     </>
   );
