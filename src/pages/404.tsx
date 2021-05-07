@@ -4,11 +4,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 
-import { Button } from '../components';
-
-import '../styles/globals.scss';
-import '../styles/page404.scss';
-
 const Custom404: NextPage = () => {
   return (
     <>
@@ -22,11 +17,6 @@ const Custom404: NextPage = () => {
               <div className="title">
                 <h2>Ops...</h2>
                 <h3 className="subtitle">Parece que eu me perdi....</h3>
-                <Button>
-                  <Link href="/">
-                    <a>Voltar para a home</a>
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>
