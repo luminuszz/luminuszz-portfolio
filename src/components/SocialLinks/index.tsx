@@ -16,13 +16,6 @@ const SocialLinks: React.FC = () => {
           <Icon w="30px" h="30px" as={AiOutlineLinkedin} />
         </Link>
         <Link
-          href="https://twitter.com/luminuszz1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon w="30px" h="30px" as={FiTwitter} />
-        </Link>
-        <Link
           href="https://github.com/luminuszz"
           target="_blank"
           rel="noopener noreferrer"

@@ -27,16 +27,14 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    const execute = async (): Promise<void> => {
+    (async () => {
       const animationWord = (await import('../utils/handleAnimationWord'))
         .default;
 
       if (textRef.current) {
         animationWord(textRef);
       }
-    };
-
-    execute();
+    })();
   }, [textRef]);
 
   return (
