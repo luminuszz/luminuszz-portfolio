@@ -6,7 +6,7 @@ import { VscGithubAlt } from 'react-icons/vsc';
 
 const SocialLinks: React.FC = () => {
   return (
-    <Flex display="flex" flexDir="row" justify="center">
+    <Flex ml="65px" display="flex" flexDir="row" justify="center">
       <HStack spacing="5">
         <Link
           href="https://www.linkedin.com/in/davi-ribeiro-daviribeiro/"
