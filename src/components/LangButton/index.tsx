@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Icon, Box, Flex, Text } from '@chakra-ui/react';
+import { Icon, Flex, Text } from '@chakra-ui/react';
 import { useTranslation } from 'next-translate';
 import Link from 'next-translate/Link';
 import React, { useMemo } from 'react';
@@ -21,15 +21,17 @@ const LangButton: React.FC = () => {
           <Link lang={currentLang} key={currentLang} href="/">
             <Icon w="40px" h="40px" as={FaLanguage} />
           </Link>
-          <Text
-            ml="5"
-            textTransform="uppercase"
-            fontFamily="heading"
-            fontWeight="500"
-            letterSpacing="5px"
-          >
-            {currentLang}
-          </Text>
+          <Link lang={currentLang} key={currentLang} href="/">
+            <Text
+              ml="5"
+              textTransform="uppercase"
+              fontFamily="heading"
+              fontWeight="500"
+              letterSpacing="5px"
+            >
+              {currentLang}
+            </Text>
+          </Link>
         </>
       ))}
     </Flex>

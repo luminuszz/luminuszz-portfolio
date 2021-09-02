@@ -86,7 +86,7 @@ const Home: NextPage = () => {
                   delay: 2.8,
                 },
               }}
-              src={profile}
+              src="https://avatars.githubusercontent.com/u/48535259?v=4"
               boxSize="400px"
               borderRadius="full"
             />

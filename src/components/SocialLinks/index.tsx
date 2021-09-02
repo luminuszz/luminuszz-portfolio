@@ -1,7 +1,7 @@
 import { Flex, HStack, Icon, Link } from '@chakra-ui/react';
 import React from 'react';
 import { AiOutlineLinkedin } from 'react-icons/ai';
-import { FiTwitter } from 'react-icons/fi';
+import { SiGmail } from 'react-icons/si';
 import { VscGithubAlt } from 'react-icons/vsc';
 
 const SocialLinks: React.FC = () => {
@@ -21,6 +21,13 @@ const SocialLinks: React.FC = () => {
           rel="noopener noreferrer"
         >
           <Icon w="30px" h="30px" as={VscGithubAlt} />
+        </Link>
+        <Link
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=davi@luminuszz.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon w="30px" h="30px" as={SiGmail} />
         </Link>
       </HStack>
     </Flex>

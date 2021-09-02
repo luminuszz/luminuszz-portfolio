@@ -12,9 +12,7 @@ class MyDocument extends Document {
   static async getInitialProps(
     ctx: DocumentContext,
   ): Promise<DocumentInitialProps> {
-    const initialProps = await Document.getInitialProps(ctx);
-
-    return initialProps;
+    return await Document.getInitialProps(ctx);
   }
 
   render(): JSX.Element {
@@ -35,10 +33,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-            src="//code.tidio.co/bo0jqca3poierl37q80ezc3n69zvn4mu.js"
-            async
-          />
         </body>
       </Html>
     );
