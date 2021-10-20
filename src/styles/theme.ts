@@ -1,16 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
 
-/*
-:root {
-  background: $color-background;
-  scroll-behavior: smooth;
-  --family-primary: 'Roboto';
-  --family-secondary: 'Montserrat';
-  --color-background: #;
-  --color-neutral: #ffff;
-}
-*/
-
 export const theme = extendTheme({
   colors: {
     blue: {
@@ -21,7 +10,6 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'blue.900',
         color: 'white',
       },
     },

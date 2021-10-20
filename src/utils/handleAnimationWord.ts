@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+
 export default function handleAnimationWord(
   element: React.MutableRefObject<Element | null>,
 ): void {

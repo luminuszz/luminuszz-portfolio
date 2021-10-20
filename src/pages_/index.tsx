@@ -72,6 +72,9 @@ const Home: NextPage = () => {
               </Text>
               <Text ml="14" my="5" fontSize="2xl">
                 {t('common:main.subTitle')}
+              </Text>{' '}
+              <Text ml="14" my="5" fontSize="2xl">
+                {t('common:main.message')}
               </Text>
               <SocialLinks />
             </Box>
@@ -86,14 +89,15 @@ const Home: NextPage = () => {
                   delay: 2.8,
                 },
               }}
-              src="https://avatars.githubusercontent.com/u/48535259?v=4"
+              src="/work2.svg"
               boxSize="400px"
               borderRadius="full"
+              pl={['50px', '50px', '0']}
             />
           </Stack>
         </Flex>
 
-        <Flex mt="-6">
+        <Flex mt="-20">
           <Box align="center">
             <VStack spacing="5">
               <Heading
