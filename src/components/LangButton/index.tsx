@@ -10,30 +10,26 @@ import { allLanguages } from '../../../i18n.json';
 const LangButton: React.FC = () => {
   const { lang } = useTranslation();
 
-  const formattedLang = useMemo(() => {
-    return allLanguages.filter(currentLang => currentLang !== lang);
-  }, [lang]);
+  const formattedLang = useMemo(() => (lang === 'pt' ? 'en' : 'pt'), [lang]);
 
   return (
     <Flex position="absolute" right="8" top="5" cursor="pointer" align="center">
-      {formattedLang.map(currentLang => (
-        <>
-          <Link lang={currentLang} key={currentLang} href="/">
-            <Icon w="40px" h="40px" as={FaLanguage} />
-          </Link>
-          <Link lang={currentLang} key={currentLang} href="/">
-            <Text
-              ml="5"
-              textTransform="uppercase"
-              fontFamily="heading"
-              fontWeight="500"
-              letterSpacing="5px"
-            >
-              {currentLang}
-            </Text>
-          </Link>
-        </>
-      ))}
+      <>
+        <Link lang={formattedLang} key={formattedLang} href="/">
+          <Icon w="40px" h="40px" as={FaLanguage} />
+        </Link>
+        <Link lang={formattedLang} key={formattedLang} href="/">
+          <Text
+            ml="5"
+            textTransform="uppercase"
+            fontFamily="heading"
+            fontWeight="500"
+            letterSpacing="5px"
+          >
+            {formattedLang}
+          </Text>
+        </Link>
+      </>
     </Flex>
   );
 };
