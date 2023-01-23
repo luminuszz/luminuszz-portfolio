@@ -19,4 +19,8 @@ export const theme = extendTheme({
     body: 'Roboto',
     heading: 'Montserrat',
   },
+
+  config: {
+    initialColorMode: 'dark',
+  },
 });

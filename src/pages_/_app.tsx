@@ -4,10 +4,11 @@ import I18nProvider from 'next-translate/I18nProvider';
 import useTranslation from 'next-translate/useTranslation';
 import { AppProps } from 'next/app';
 import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { SEO } from '../components';
-import { theme } from '../styles/theme';
 import { gradientCss } from '../styles/cssGraidentScript';
+import { theme } from '../styles/theme';
 
 const Layout: React.FC = ({ children }) => {
   console.log('tes');
@@ -20,14 +21,19 @@ const Layout: React.FC = ({ children }) => {
 
 const CustomApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   const { lang } = useTranslation();
+
+  const queryClient = new QueryClient();
+
   return (
     <I18nProvider lang={lang}>
       <ChakraProvider theme={theme}>
-        <SEO />
+        <QueryClientProvider client={queryClient}>
+          <SEO />
 
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </QueryClientProvider>
       </ChakraProvider>
     </I18nProvider>
   );
